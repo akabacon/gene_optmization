@@ -12,6 +12,6 @@ function cost = M1(parameters)
     predicted_alcohol_content = k * (exp(1).^(q .* time) - exp(1).^(r .* time));
 
     % 计算预测值与实际值之间的误差
-    cost = sum((predicted_alcohol_content^2 - alcohol_content^2).);
+    cost = sqrt(sum((predicted_alcohol_content.^2 - alcohol_content.^2)));
     fprintf("k:%d q:%d r:%d\n",k,q,r);
 end
